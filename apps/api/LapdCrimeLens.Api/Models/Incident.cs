@@ -42,14 +42,14 @@ public class Incident
 
     // Victim / Incident Flags
     public int? TotalVictimCount { get; set; }
-    public bool IsVictimShot { get; set; }
-    public bool IsDomesticViolence { get; set; }
-    public bool IsHateCrime { get; set; }
-    public bool IsGangRelated { get; set; }
-    public bool IsTransitRelated { get; set; }
-    public bool IsHomelessVictim { get; set; }
-    public bool IsHomelessSuspect { get; set; }
-    public bool IsHomelessArrestee { get; set; }
+    public bool? IsVictimShot { get; set; }
+    public bool? IsDomesticViolence { get; set; }
+    public bool? IsHateCrime { get; set; }
+    public bool? IsGangRelated { get; set; }
+    public bool? IsTransitRelated { get; set; }
+    public bool? IsHomelessVictim { get; set; }
+    public bool? IsHomelessSuspect { get; set; }
+    public bool? IsHomelessArrestee { get; set; }
 
     // Location
     public string Location { get; set; } = string.Empty;
