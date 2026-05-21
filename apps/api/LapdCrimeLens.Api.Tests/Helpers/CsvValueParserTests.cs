@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using LapdCrimeLens.Api.Import;
 namespace LapdCrimeLens.Api.Tests.Import;
 
@@ -40,6 +41,103 @@ public class CsvValueParserTests
     {
         var value = "not-a-date";
         var result = CsvValueParser.ParseNullableDateTime(value);
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void ParseNullableInt_WithValidIntValue_ReturnsParsedInt()
+    {
+        var value = "2139";
+        var result = CsvValueParser.ParseNullableInt(value);
+
+        Assert.Equal(2139, result);
+    }
+
+    [Fact]
+    public void ParseNullableInt_WithNonNumericalValue_ReturnsNull()
+    {
+        var value = "jrkjfrkjf";
+        var result = CsvValueParser.ParseNullableInt(value);
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void ParseNullableInt_WithEmptyString_ReturnsNull()
+    {
+        var value = "   ";
+        var result = CsvValueParser.ParseNullableInt(value);
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void ParseNullableDouble_WithValidDoubleValue_ReturnsParsedDouble()
+    {
+        var value = "34.2011";
+        var result = CsvValueParser.ParseNullableDouble(value);
+        Assert.Equal(result, 34.2011);
+    }
+    [Fact]
+    public void ParseNullableDouble_WithValidNegativeDoubleValue_ReturnsParsedNegativeDouble()
+    {
+        var value = "-118.3025";
+        var result = CsvValueParser.ParseNullableDouble(value);
+        Assert.Equal(result, -118.3025);
+    }
+
+    [Fact]
+    public void ParseNullableDouble_WithNonNumericalValue_ReturnsNull()
+    {
+        var value = "jrkjfrkjf";
+        var result = CsvValueParser.ParseNullableDouble(value);
+        Assert.Null(result);
+    }
+
+
+    [Fact]
+    public void ParseNullableDouble_WithEmptyString_ReturnsNull()
+    {
+        var value = "   ";
+        var result = CsvValueParser.ParseNullableDouble(value);
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void ParseYesOrNo_WithValidYesString_ReturnsBoolean()
+    {
+        var value = "Yes";
+        var result = CsvValueParser.ParseYesOrNo(value);
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void ParseYesOrNo_WithValidNoString_ReturnsBoolean()
+    {
+        var value = "No";
+        var result = CsvValueParser.ParseYesOrNo(value);
+        Assert.False(result);
+    }
+
+    [Fact]
+    public void ParseYesOrNo_WithInvalidNumericValue_ReturnsNull()
+    {
+        var value = "123034";
+        var result = CsvValueParser.ParseYesOrNo(value);
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void ParseYesOrNo_WithNonYesOrNoValue_ReturnnsNull()
+    {
+        var value = "banana";
+        var result = CsvValueParser.ParseYesOrNo(value);
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void ParseYesOrNo_WithWhiteSpace_ReturnsNull()
+    {
+        var value = "   ";
+        var result = CsvValueParser.ParseYesOrNo(value);
         Assert.Null(result);
     }
 }
