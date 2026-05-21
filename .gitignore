@@ -1,0 +1,165 @@
+# =========================================================
+# General OS / editor files
+# =========================================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# =========================================================
+# Environment / secrets
+# =========================================================
+
+.env
+.env.*
+!.env.example
+
+*.local
+*.secret
+secrets.json
+
+# =========================================================
+# Logs
+# =========================================================
+
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================================================
+# .NET / ASP.NET Core
+# =========================================================
+
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+coverage/
+.coverage/
+
+# Rider / ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# ASP.NET local config
+appsettings.Development.json
+appsettings.Local.json
+
+# EF Core / SQLite local DB files
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# =========================================================
+# Node / React / TypeScript
+# =========================================================
+
+node_modules/
+dist/
+build/
+.next/
+out/
+.vite/
+.cache/
+.parcel-cache/
+
+coverage/
+.nyc_output/
+
+*.tsbuildinfo
+
+# Package manager caches
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# =========================================================
+# Frontend env files
+# =========================================================
+
+apps/web/.env
+apps/web/.env.*
+!apps/web/.env.example
+
+# =========================================================
+# Backend env files
+# =========================================================
+
+apps/api/.env
+apps/api/.env.*
+!apps/api/.env.example
+
+# =========================================================
+# Data files
+# =========================================================
+
+# Keep huge raw datasets out of Git.
+data/raw/
+data/imports/
+data/exports/
+
+# Allow small samples for portfolio/demo purposes.
+!data/samples/
+!data/samples/.gitkeep
+
+# Common large data formats
+*.csv
+*.tsv
+*.jsonl
+*.ndjson
+
+# Allow explicit sample files:
+!data/samples/*.csv
+!data/samples/*.json
+
+# =========================================================
+# Docker
+# =========================================================
+
+.docker/
+docker-data/
+
+# =========================================================
+# Azure / deployment artifacts
+# =========================================================
+
+.azure/
+*.publishsettings
+
+# =========================================================
+# Misc
+# =========================================================
+
+*.tmp
+*.temp
+*.bak
